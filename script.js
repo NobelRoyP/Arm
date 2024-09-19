@@ -71,7 +71,7 @@ function displayComment(comment) {
 // Fetch comments from Firestore when the page loads and display them
 async function loadCommentsFromFirestore() {
     try {
-        const querySnapshot = await db.collection('comments').orderBy('timestamp').get();
+        const querySnapshot = await db.collection('comments').orderBy('timestamp','desc').get();
         comments = []; // Clear local comments
         querySnapshot.forEach((doc) => {
             const comment = doc.data();

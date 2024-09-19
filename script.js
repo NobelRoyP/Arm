@@ -59,8 +59,12 @@ document.getElementById('commentForm').addEventListener('submit', async (e) => {
 function displayComment(comment) {
     const commentList = document.getElementById('commentList');
     const div = document.createElement('div');
+    const divHead = document.createElement('div')
     div.className = 'comment';
+    divHead.className = 'commentHead';
     div.textContent = comment.text;
+    divHead.innerHTML = "<h3>Anonymous User</h3>";
+    commentList.appendChild(divHead);
     commentList.appendChild(div);
 }
 
